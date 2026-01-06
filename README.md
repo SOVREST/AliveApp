@@ -14,7 +14,8 @@ A lightweight Windows process monitor that automatically restarts applications i
 
 ## Screenshot
 
-![AliveApp Screenshot](screenshot.png)
+<img width="602" height="582" alt="image" src="https://github.com/user-attachments/assets/4856cb57-41b6-4c4c-be1e-7628b3c747cc" />
+
 
 ## Installation
 
