@@ -553,8 +553,10 @@ class MainWindow:
 
     def quit(self):
         """Закрыть приложение"""
-        if self.on_close:
-            self.on_close()
         if self.root:
-            self.root.quit()
-            self.root.destroy()
+            try:
+                self.root.quit()
+                self.root.destroy()
+            except:
+                pass
+            self.root = None

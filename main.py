@@ -60,9 +60,21 @@ class AliveApp:
             self.monitor.stop()
         if self.tray:
             self.tray.stop()
+        if self.window and self.window.root:
+            # Закрываем окно из главного потока tkinter
+            try:
+                self.window.root.after(0, self._shutdown)
+            except:
+                self._shutdown()
+        else:
+            self._shutdown()
+
+    def _shutdown(self):
+        """Завершение работы"""
         if self.window:
             self.window.quit()
-        sys.exit(0)
+        import os
+        os._exit(0)
 
     def run(self):
         """Запустить приложение"""
